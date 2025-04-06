@@ -1,0 +1,24 @@
+---
+import logoUrl from '~/assets/images/other/logo.webp';
+import { getImage } from 'astro:assets';
+import { SITE } from 'astrowind:config';
+
+const optimizedLogo = await getImage({ src: logoUrl });
+
+const organizationSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  '@id': SITE.site,
+  name: 'Rukouksen seurakunta',
+  url: SITE.site,
+  logo: {
+    '@type': 'ImageObject',
+    url: new URL(optimizedLogo.src, SITE.site).toString(),
+    width: '640',
+    height: '640',
+  },
+  description: 'Rukouksen seurakunta',
+};
+---
+
+<script type="application/ld+json" set:html={JSON.stringify(organizationSchema)} />
