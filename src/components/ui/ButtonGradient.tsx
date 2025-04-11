@@ -20,7 +20,7 @@ export function ButtonGradient() {
           WebkitClipPath: 'padding-box',
         }}
       />
-      <AnimatedGradientText className='text-sm font-medium'>Why Cherubim?</AnimatedGradientText>
+      <AnimatedGradientText className='text-sm font-medium'>Contact Us</AnimatedGradientText>
       <ChevronRight
         className='ml-1 size-4 stroke-neutral-500 transition-transform
  duration-300 ease-in-out group-hover:translate-x-0.5'
